@@ -1,0 +1,51 @@
+---
+title: "Developing Data Products - Assignment - Week 4"
+subtitle: "13 September 2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+
+## Summary
+
+This peer assessed assignment has two parts. 
+
+1. A Shiny application was created displaying the relationships between 'miles per gallon' (mpg) and different variables. The app is based on the Motor Trend Car Road Tests (mtcars) data provided by R. 
+- The shiny app can be found here:
+https://d-m-j.shinyapps.io/DDP_Assignment_wk4/
+
+
+2.  Rstudio Presenter was used to prepare a reproducible pitch presentation about your application. A github repository can be found in: 
+https://github.com/D-M-J/Developing_Data_Products_Assignment_Week4
+
+
+
+
+
+
+## Application - Description
+
+Using the dataset "mtcars", "Mileage per Gallon" (mpg) is plotted versus different variables including "Number of cylinders", "Displacement","Horsepower", "Rear axle ratio", "Weight (lb/1000)", "1/4 mile time", "V/S", "Transmission", "Number of forward gears", "Number of carburetors". Linear prediction models are calculated on each of the variables. The summary of each prediction model is shown in the app. 
+
+
+## Application - Example
+
+Here an example for mgp versus horse power (hp)
+
+```{r, eval=TRUE, echo = FALSE, warning=FALSE}
+data(mtcars)
+plot(mtcars$hp, mtcars$mpg, data=mtcars, xlab="hp", ylab="mpg")
+abline(lm(mpg~hp, data=mtcars), col=3)
+
+```
+
+## Using the App
+
+- The sidebar panel includes a selction menu, where the different variables can be selected. Simply click in the box on the left to select the variable you're interested in. 
+- The main panel displays the plot with the fitted line and the summary of the statisticsl. 
+
